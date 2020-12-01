@@ -1,14 +1,26 @@
 import os
 import csv
-with open(csvpath) as csvfile: 
 
-    # CSV reader specifies delimiter and variable that holds contents
-    csvreader = csv.reader(csvfile, delimiter=',')
+budget_csvpath = os.path.join('Resources', 'budget_data.csv')
 
-    print(csvreader)
+with open(budget_csvpath, newline='') as budget_csvfile:
 
-    csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
+	budget_csvreader = csv.reader(budget_csvfile, delimiter=',')
+
+	budget_list = list(budget_csvreader)
+	head_budget_list = budget_list[0]
+	data_budget_list = budget_list[1:]
+
+	months_total = len(data_budget_list)
+
+	net_total = 0
+	change = 0
+	
+
+   
+  
     
-csvpath = os.path.join("..", "Resources", "budget_data.csv")
+    
+
+    
 
